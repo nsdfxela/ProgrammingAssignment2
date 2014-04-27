@@ -3,6 +3,7 @@
 ## consists of accessors and datafiels. cacheSolve includes a logic of 
 ## choosing the way of calculation inverse (normal, via standart "solve", 
 ## or cached, if the value have already be calculated)
+## 20140427  by nsdfxela
 
 makeCacheMatrix <- function(x = matrix()) {
 
@@ -10,7 +11,7 @@ makeCacheMatrix <- function(x = matrix()) {
     get <- function () x
     set <- function (y) {
       x <<- y
-      inv <<- NULL
+      inv <<- NULL ##if the data changes, null the inverted value
     }
     getInv <- function () inv
     setInv <- function(invert) inv <<-invert
